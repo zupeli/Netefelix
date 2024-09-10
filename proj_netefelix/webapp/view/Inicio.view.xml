@@ -1,0 +1,36 @@
+<mvc:View controllerName="projnetefelix.controller.Inicio"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:layout="sap.ui.layout"
+    xmlns="sap.m">
+    <Page id="idPage" title="{i18n>title}">
+        <subHeader>
+            <Toolbar >
+                <content> 
+                    <Link text="Início" press="onInicioLinkPress"></Link>
+                    <Link text="FILMES"></Link>
+                    <Link text="SÉRIES"></Link>
+                    <ToolbarSpacer ></ToolbarSpacer>                    
+                    <SearchField width="30%" id="idSearchField" search="onBuscarDados"></SearchField> 
+                </content>
+            </Toolbar>
+        </subHeader>
+        <content>
+           <!-- <layout:Grid content="{ArquivoNetflix>/titles}">  -->
+             <layout:Grid content="{APINetflixxx>/titles}">
+              <VBox width="300px" height="350px" class="preencherBoxPreto">
+              <!--  <Image src="{ArquivoNetflix>jawSummary/backgroundImage/url}" width="100%" height="100%"> </Image>  -->
+              <Image src="{APINetflixxx>jawSummary/backgroundImage/url}" width="100%" height="100%"> </Image>
+                <Image src="{APINetflixxx>jawSummary/logoImage/url}" width="60%" height="60%"> </Image>
+              <!--  <Image src="{APINetflixxx>jawSummary/backgroundImage/url}" width="60%" height="60%"> </Image> -->
+              <!-- <Text text="{APINetflixxx>jowSumary/title}" class= "preencherTextoBranco"></Text> -->
+               <Text text="{APINetflixxx>jawSummary/title}" class= "preencherTextoBranco espacoRodape"></Text>
+               <Text text="{APINetflixxx>jawSummary/synopsis}" class= "preencherTextoBranco espacoRodape"></Text>
+               <Text text="{APINetflixxx>jawSummary/genres/1/name}" class= "preencherTextoBranco espacoRodape"></Text>
+               <Text text="{APINetflixxx>jawSummary/genres/2/name}" class= "preencherTextoBranco espacoRodape"></Text>
+              </VBox>  
+            </layout:Grid>
+        
+        </content>
+        
+    </Page>
+</mvc:View>
